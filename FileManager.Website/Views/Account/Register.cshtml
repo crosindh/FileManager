@@ -1,0 +1,42 @@
+﻿@model FileManager.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LoginView.cshtml";
+}
+
+<h3>@ViewBag.Title</h3>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Create a new account</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Username</label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter Username" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Password</label>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Password" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <label>Confirm Passowrd</label>
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm Password" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Register" />
+        </div>
+    </div>
+}
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

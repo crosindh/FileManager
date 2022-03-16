@@ -1,0 +1,120 @@
+﻿@model FileManager.Models.FileInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dakk_Data</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Filename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Filenumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filenumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Addressee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Addressee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sectionoforigin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sectionoforigin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Receivedby)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receivedby)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UploadDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UploadDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Pdfdirectory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pdfdirectory)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

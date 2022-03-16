@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<style>
+    ul.pagination {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+            ul.pagination li a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                border: solid;
+            }
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/FrontEnd/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/FrontEnd/dist/css/adminlte.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+            <li class="nav-item">
+                <a href="~/FileInformation/Index" class="text-primary">File Data</a>
+            </li>
+
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+
+            @if (User.IsInRole("Admin"))
+            {
+                <li style="margin-right:10px">
+                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                </li>
+            }
+            <li class="nav-item">
+            <li class="nav-item d-none d-sm-inline-block">
+                @Html.Partial("_LoginPartial")
+            </li>
+        </ul>
+
+    </nav>
+
+    <section class="content">
+        <div class="card">
+            <div class="card-body">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <footer class="col-12">
+        <strong>Copyright &copy; @DateTime.Now.Year <a href="">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
+    </footer>
+
+    <script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
+
+    <script src="~/FrontEnd/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
+</body>
+</html>

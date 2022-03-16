@@ -1,0 +1,132 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<FileManager.Models.FileInformation>
+
+<h3 class="text-success">@TempData["success"]</h3>
+
+@using (Html.BeginForm("Index", "FileInformation", FormMethod.Get))
+{
+    
+        <p style="position:relative;float:right;margin-left:15px">
+            <input class="btn btn-primary" type="button" title="Create New" value="Create New" onclick="location.href = '/FileInformation/Create'" />
+        </p>
+
+        <p style="position:relative;float:right;margin-left:10px;">
+            Find: <input id="SearchString" name="SearchString" type="text" value="" />
+            <input type="submit" value="Search" class="btn btn-danger" />
+        </p>
+        <p style="position:relative;display:inline-block;float:right;margin-left:5px;">
+            Filter By Upload Date : <input type="date" name="uploadDate" autocomplete="off" />
+        </p>
+
+        <div class="card">
+            <div class="card-header">
+                    <h3 class="card-title"> Project = @ViewBag.Project </h3> 
+                    <h3 class="card-title" style="padding-left:12px"> Scheme = @ViewBag.Scheme </h3> 
+                    <h3 class="card-title" style="padding-left:12px"> PC-I = @ViewBag.PC1 </h3> 
+                    <h3 class="card-title" style="padding-left:12px"> FileType-2 = @ViewBag.FileType2 </h3>
+                    
+             
+                </div>
+        </div>
+    <table class="table table-bordered @*table-condensed table-responsive table-striped*@" style="text-align:start; height:100%; width:100%;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UploadDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.First().Filename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Filenumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Pages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Addressee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Sectionoforigin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Receivedby)
+            </th>
+            <th>
+                @Html.DisplayName("Download File")
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.First().Status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+           
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UploadDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Filename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Filenumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Addressee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sectionoforigin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Receivedby)
+                </td>
+                <td>
+                    @Html.ActionLink("Download PDF", "Download", new { dakkname = item.Pdfdirectory })
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
+                    }
+                </td>
+            </tr>
+            
+      
+        }
+    </table>
+  
+}
+
+@Html.PagedListPager(Model, pageNumber => Url.Action("Index", new
+{
+    pageNumber,
+    SearchString = Request.QueryString["SearchString"],
+    uploadDate = Request.QueryString["uploadDate"],
+    DateonDakk = Request.QueryString["DateonDakk"]
+}),new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })
