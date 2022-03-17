@@ -33,7 +33,8 @@ namespace FileManager.Models
         public string Receivedby { get; set; }
 
         public string Status { get; set; }
-      
+
+        [Display(Name = "Upload File")]
         public string Pdfdirectory { get; set; }
     }
 }

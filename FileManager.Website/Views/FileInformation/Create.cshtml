@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2 class="text-primary">Add New File</h2>
+<h4 class="text-success">Add New File</h4>
 
 
 @using (Html.BeginForm("Create", "FileInformation", FormMethod.Post, new { encType = "Multipart/Form-Data" }))
@@ -13,14 +13,14 @@
     @Html.AntiForgeryToken()
     <form>
         <div class="row">
-            <div class="col-12">
-                <div class="border p-3 mt-4 row">
+            <div class="col-10">
+                <div class="border p-3 row">
                     <div class="col-12 pb-2">
                       @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="col-10">
-                        <h4 class="text-primary">Sender Details</h4>
+                        <h4 class="text-success">Sender Details</h4>
                     </div>
                    
                     <div class="mb-3 col-5">
@@ -37,7 +37,7 @@
 
 
                     <div class="col-10">
-                        <h4 class="text-primary">Receiver Details</h4>
+                        <h4 class="text-success">Receiver Details</h4>
                     </div>
                     <div class="mb-3 col-5">
                         @Html.LabelFor(model => model.Addressee, htmlAttributes: new { @class = "control-label" })
@@ -52,29 +52,29 @@
 
 
                     <div class="col-10">
-                        <h4 class="text-primary">File Details</h4>
+                        <h4 class="text-success">File Details</h4>
                     </div>
-                    <div class="mb-3 col-5">
+                    <div class="mb-3 col-4">
                         @Html.LabelFor(model => model.Filename, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.Filename, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Filename, "", new { @class = "text-danger" })
 
                     </div>
 
-                    <div class="mb-3 col-5">
+                    <div class="mb-3 col-4">
                         @Html.LabelFor(model => model.Filenumber, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.Filenumber, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Filenumber, "", new { @class = "text-danger" })
 
                     </div>
-                    <div class="mb-3 col-5">
+                    <div class="mb-3 col-2">
                         @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label" })
                         @Html.DropDownListFor(model => model.Type, new SelectList(@ViewBag.Type), "--Select Type--", htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
 
                     </div>
 
-                    <div class="mb-3 col-5">
+                    <div class="mb-3 col-10">
                         @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label" })
                         @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
@@ -98,16 +98,16 @@
                     </div>
                     
                     <div class="mb-3 col-5">
-                        @Html.DisplayName("Upload File")
+                        @Html.LabelFor(model => model.Pdfdirectory, htmlAttributes: new { @class = "control-label" })
                         <input type="file" id="file" name="file" value="BrowseFile" class="form-control" accept="application/pdf" required="required" />
                         @Html.ValidationMessageFor(model => model.Pdfdirectory, "", new { @class = "text-danger" })
                     </div>
-
+                    <div class="mb-3 col-10 pt-4">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input class="btn btn-secondary" type="button" title="Back To Index" value="Back To Index" onclick="location.href = '/FileInformation/Index'" />
+                    </div>
                 </div>
-                <div class="col-6 pt-4">
-                    <input type="submit" value="Create Dakk" class="btn btn-primary" />
-                    <input class="btn btn-default" type="button" title="Back To Index" value="Back To Index" onclick="location.href = '/FileInformation/Index'" />
-                </div>
+               
             </div>
         </div>
     </form>

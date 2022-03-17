@@ -16,9 +16,9 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-success">
             <div class="card-header text-center">
-                <a href="~/Account/Login" class="h1"><b>P &amp; D<br /></b><h2>File - Manager</h2></a>
+                <h1><b>P &amp; D<br /></b></h1><h2>File - Manager</h2>
             </div>
             <div class="card-body">
               @RenderBody()
@@ -27,6 +27,14 @@
         </div>
         <!-- /.card -->
     </div>
+
+    <div class="container body-content">
+        <hr />
+        <footer style="align-content:center">
+            <strong>Copyright &copy; @DateTime.Now.Year <a class="text-success">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
+        </footer>
+    </div>
+
     <!-- /.login-box -->
     <!-- jQuery -->
     <script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
@@ -35,15 +43,15 @@
     <!-- AdminLTE App -->
     <script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
   
-    <div class="container body-content">
-        @*@RenderBody()*@
-        <hr />
-        <footer>
-            <strong>Copyright &copy; @DateTime.Now.Year <a href="">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
-        </footer>
-    </div>
-   
+ 
 
 </body>
 </html>
 
+<style>
+      a:link, a:any-link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+    }
+</style>

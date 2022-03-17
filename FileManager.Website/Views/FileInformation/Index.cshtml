@@ -2,13 +2,13 @@
 @using PagedList.Mvc
 @model IPagedList<FileManager.Models.FileInformation>
 
-<h3 class="text-success">@TempData["success"]</h3>
+<h3 class="text-primary">@TempData["success"]</h3>
 
 @using (Html.BeginForm("Index", "FileInformation", FormMethod.Get))
 {
     
         <p style="position:relative;float:right;margin-left:15px">
-            <input class="btn btn-primary" type="button" title="Create New" value="Create New" onclick="location.href = '/FileInformation/Create'" />
+            <input class="btn btn-success" type="button" title="Create New" value="Create New" onclick="location.href = '/FileInformation/Create'" />
         </p>
 
         <p style="position:relative;float:right;margin-left:10px;">
@@ -29,7 +29,7 @@
              
                 </div>
         </div>
-    <table class="table table-bordered @*table-condensed table-responsive table-striped*@" style="text-align:start; height:100%; width:100%;">
+    <table class="table table-bordered table-responsive table-striped" style="text-align:center;">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.First().UploadDate)
@@ -112,6 +112,7 @@
                     @if (User.IsInRole("Admin"))
                     {
                         @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+
                         @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
                     }
                 </td>

@@ -1,24 +1,4 @@
 ﻿<!DOCTYPE html>
-<style>
-    ul.pagination {
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-    }
-
-        ul.pagination li {
-            display: inline;
-        }
-
-            ul.pagination li a {
-                color: black;
-                float: left;
-                padding: 8px 16px;
-                text-decoration: none;
-                border: solid;
-            }
-</style>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -42,7 +22,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
             </li>
             <li class="nav-item">
-                <a href="~/FileInformation/Index" class="text-primary">File Data</a>
+                <a href="~/FileInformation/Index" class="text-success" style="font-size:large"><b>File Data</b></a>
             </li>
 
         </ul>
@@ -69,16 +49,14 @@
             <div class="card-body">
                 @RenderBody()
             </div>
+
+            <footer class="col-12">
+                <strong>Copyright &copy; @DateTime.Now.Year <a class="text-success">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
+            </footer>
+        
         </div>
     </section>
 
-
-
-
-
-    <footer class="col-12">
-        <strong>Copyright &copy; @DateTime.Now.Year <a href="">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
-    </footer>
 
     <script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
 
@@ -87,3 +65,29 @@
     <script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
 </body>
 </html>
+
+<style>
+    ul.pagination {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+            ul.pagination li a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                border: solid;
+            }
+
+    a:link, a:any-link {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+    }
+</style>
