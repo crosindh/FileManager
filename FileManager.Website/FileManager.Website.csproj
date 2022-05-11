@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -204,6 +205,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Dakk_DataController.cs" />
     <Compile Include="Controllers\FileInformationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -216,6 +218,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Guide\Mannual.pdf" />
+    <Content Include="Content\images\CRO LOGO.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -264,6 +268,14 @@
     <Content Include="FrontEnd\dist\js\adminlte.min.js.map" />
     <Content Include="FrontEnd\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="FrontEnd\plugins\jquery\jquery.min.map" />
+    <Content Include="Downloads\Dakk\1_admin_Pending_25-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\1_General_Pending_07-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\3_legal_Seen_24-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\4_asdasd_Urgent_08-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\5_asdasdasdasd_Urgent_18-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\6_legal_Urgent_13-04-2022.pdf" />
+    <Content Include="Downloads\Dakk\7_admin_Urgent_09-04-2022.pdf" />
+    <Content Include="Downloads\File\1_Test Dakk_Done_.pdf" />
     <None Include="Properties\PublishProfiles\FileManger.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -277,7 +289,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -300,7 +314,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\FileInformation\Create.cshtml" />
-    <Content Include="Views\FileInformation\Delete.cshtml" />
     <Content Include="Views\FileInformation\Details.cshtml" />
     <Content Include="Views\FileInformation\Edit.cshtml" />
     <Content Include="Views\FileInformation\Index.cshtml" />
@@ -317,10 +330,16 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Shared\_LoginView.cshtml" />
+    <Content Include="Views\FileInformation\Delete.cshtml" />
+    <Content Include="Views\Dakk_Data\Index.cshtml" />
+    <Content Include="Views\Dakk_Data\Details.cshtml" />
+    <Content Include="Views\Dakk_Data\Create.cshtml" />
+    <Content Include="Views\Dakk_Data\Edit.cshtml" />
+    <Content Include="Views\Dakk_Data\Delete.cshtml" />
+    <Content Include="Views\FileInformation\Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Downloads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

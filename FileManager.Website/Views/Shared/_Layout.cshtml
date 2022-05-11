@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="~/FrontEnd/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/FrontEnd/dist/css/adminlte.min.css">
-
 </head>
 
 <body>
@@ -21,19 +20,36 @@
             <li class="nav-item">
                 &nbsp;&nbsp;&nbsp;&nbsp;
             </li>
+            @if (User.Identity.Name!="R&I")
+            {
+                <li class="nav-item">
+                    <a href="~/FileInformation/Index" class="text-success" style="font-size:large"><b>File Data</b></a>
+                </li>
+
+            }
             <li class="nav-item">
-                <a href="~/FileInformation/Index" class="text-success" style="font-size:large"><b>File Data</b></a>
+                <a href="~/Dakk_Data/Index" class="text-success" style="font-size:large"><b>&nbsp; &nbsp; Dakk Data</b></a>
             </li>
 
+            <li class="nav-item">
+                <a href="~/Home/Index" class="text-success" style="font-size:large"><b>&nbsp; &nbsp; Manual</b></a>
+            </li>
+            
         </ul>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
 
-            @if (User.IsInRole("Admin"))
+            @if (User.IsInRole("Admin") || User.Identity.Name == "secretary" || User.Identity.Name == "A.secretary" || User.Identity.Name == "D.secretary" || User.Identity.Name == "chairman")
             {
+                if (User.IsInRole("Admin"))
+                {
+                    <li style="margin-right:10px">
+                        @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                    </li>
+                }
                 <li style="margin-right:10px">
-                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                    @Html.ActionLink("Reset Password", "ForgotPassword","Account")
                 </li>
             }
             <li class="nav-item">
@@ -50,7 +66,7 @@
                 @RenderBody()
             </div>
 
-            <footer class="col-12">
+            <footer class="col-12" style="text-align:center">
                 <strong>Copyright &copy; @DateTime.Now.Year <a class="text-success">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
             </footer>
         
@@ -86,8 +102,10 @@
             }
 
     a:link, a:any-link {
-        color: green;
+        color: #28a745;
         background-color: transparent;
         text-decoration: none;
     }
 </style>
+
+

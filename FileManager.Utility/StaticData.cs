@@ -30,6 +30,31 @@ namespace FileManager.Utility
         {
             "Project" ,"Scheme","PC-I","FileType-2"
         };
+        public List<string> Section_List = new List<string>()
 
+        {
+            "admin1" ,"admin2","general","foreigntranning","legal","audit"
+        };
+
+        public List<string> StatusList = new List<string>()
+        { "Pending", "Urgent", "Seen", "Objection"
+        };
+
+        public List<string> ForwardToList = new List<string>
+        { "S&T", "development", "general", "admin1", "admin2", "Health", "F.Aid","F&T","L&F","socialsector","PP&H","coordination",
+           "socoord" ,"audit","legal","W&D","SP&PR","C.Eco","education","communication","transport","agriculture","industries"
+        };
+
+        public const string Status1 = "Pending";
+        public const string Status2 = "Seen";
+        public const string Status3 = "Urgent";
+        public const string Status4 = "Objection";
+
+        public const string AdminRole = "Admin";
+        public const string SecretaryRole = "Secretary";
+
+        public const string DataEntryUser = "R&I";
+
+        public const string StaticNavigationArrow = " " + "=>" + " ";
     }
 }

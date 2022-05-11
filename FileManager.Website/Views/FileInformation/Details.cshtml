@@ -1,120 +1,81 @@
 ﻿@model FileManager.Models.FileInformation
 
-@{
-    ViewBag.Title = "Details";
-}
 
-<h2>Details</h2>
 
-<div>
-    <h4>Dakk_Data</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
+<div class="col-12 row">
+    <div class="col-6">
+        <div class="border p-3 row">
+            <div class="col-12 pb-2">
+                <h1 class="text-success">File Details</h1>
+                <hr />
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.UploadDate)
+                <br />
+                @Html.DisplayFor(model => model.UploadDate)
+            </div>
+          
+            <div class="col-3">
+                @Html.LabelFor(model => model.Sectionoforigin)
+                <br />
+                @Html.DisplayFor(model => model.Sectionoforigin)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Department)
+                <br />
+                @Html.DisplayFor(model => model.Department)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Addressee)
+                <br />
+                @Html.DisplayFor(model => model.Addressee)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Receivedby)
+                <br />
+                @Html.DisplayFor(model => model.Receivedby)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Filename)
+                <br />
+                @Html.DisplayFor(model => model.Filename)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Filenumber)
+                <br />
+                @Html.DisplayFor(model => model.Filenumber)
+            </div>
+            <div class="mb-3 col-12">
+                @Html.LabelFor(model => model.Subject)
+                <br />
+                @Html.DisplayFor(model => model.Subject)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Pages)
+                <br />
+                @Html.DisplayFor(model => model.Pages)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Filename)
-        </dt>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Status)
+                <br />
+                @Html.DisplayFor(model => model.Status)
+            </div>
+           
+            <div class="col-3">
+                @Html.LabelFor(model => model.Pdfdirectory)
+                <br />
+                @Html.DisplayFor(model => model.Pdfdirectory)
+            </div>
+            
+            <div class="mb-3 col-10 pt-4">
+                <input class="btn btn-secondary" type="button" title="Back To Index" value="Back To Index" onclick="location.href = '/FileInformation/Index'" />
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Filename)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Filenumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Filenumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Department)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Department)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Subject)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Pages)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pages)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Addressee)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Addressee)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sectionoforigin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sectionoforigin)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Receivedby)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Receivedby)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UploadDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UploadDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-        
-        <dt>
-            @Html.DisplayNameFor(model => model.Pdfdirectory)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Pdfdirectory)
-        </dd>
-    </dl>
+    </div>
+    <div class="col-6">
+        @*<iframe src="~/Downloads/@Model.Pdfdirectory#toolbar=0" style="width:800px;height:900px"></iframe>*@
+        <iframe src="~/Downloads/File/@Model.Pdfdirectory" style="width:800px;height:900px"></iframe>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -1,0 +1,250 @@
+﻿@model IEnumerable<FileManager.Models.FileInformation>
+
+
+@using (Html.BeginForm("Summary", "FileInformation", FormMethod.Get))
+{
+<p style="position:relative;display:inline-block;float:right;margin-left:5px;">
+    Filter By Upload Date : <input type="date" name="uploadDate" autocomplete="off" />
+    
+    Filter By Upload Month : <input type="month" name="uploadMonth" autocomplete="off" />
+    <input type="submit" value="Search" class="btn btn-danger" />
+</p>
+   
+
+    <table class="table table-bordered table-striped col-6">
+        <tr>
+
+            <th>
+                <label>Section</label>
+            </th>
+            <th>
+                <label>Number Of Files</label>
+            </th>
+
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Admin1</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("admin1"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Admin2</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("admin2"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Development</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("development"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Chief Coordination</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("coordination"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>General</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("general"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Foriegn Training</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("F&T"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Education</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("education"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Communication</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("communication"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Agriculture</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("agriculture"))</label>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>
+                <label>Water &amp; Drainage</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("W&D"))</label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Environment</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("environment"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>SO-Coordination</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("socoord"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Legal</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("legal"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Audit</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("audit"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Transport</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("transport"))</label>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+
+            <td>
+                <label>Industries</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("industries"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Health</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("health"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Cheif Economist</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("C.Eco"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Foreign Aid</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("F.Aid"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Science &amp; Technology</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("S&T"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Sports, Culture And Tourism</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("SC&T"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>PP&amp;H</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("PP&H"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Livestock &amp; Fisheries</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("L&F"))</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Social Sector</label>
+            </td>
+            <td>
+                <label>@Model.Count(x => x.Receivedby.Equals("socialsector"))</label>
+            </td>
+        </tr>
+
+
+
+    </table>
+}

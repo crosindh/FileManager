@@ -9,9 +9,10 @@
 
 @using (Html.BeginForm("Create", "FileInformation", FormMethod.Post, new { encType = "Multipart/Form-Data" }))
 {
-
+    @Html.ValidationSummary()
     @Html.AntiForgeryToken()
     <form>
+    
         <div class="row">
             <div class="col-10">
                 <div class="border p-3 row">
@@ -32,7 +33,7 @@
                     <div class="mb-3 col-5">
                         @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label" })
                         @Html.DropDownListFor(model => model.Department, new SelectList(@ViewBag.departmentList), "--Select Department--", htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.Department ,"", new { @class = "text-danger" })
                     </div>
 
 
@@ -55,7 +56,8 @@
                         <h4 class="text-success">File Details</h4>
                     </div>
                     <div class="mb-3 col-4">
-                        @Html.LabelFor(model => model.Filename, htmlAttributes: new { @class = "control-label" })
+                        @*@Html.LabelFor(model => model.Filename + "Please Dont Add Special Charcters (@#$%^&*|\\/)", htmlAttributes: new { @class = "control-label" })*@
+                        <label>File Name (Please Dont Add #$%^&*|\/)</label>
                         @Html.EditorFor(model => model.Filename, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Filename, "", new { @class = "text-danger" })
 
@@ -69,14 +71,14 @@
                     </div>
                     <div class="mb-3 col-2">
                         @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label" })
-                        @Html.DropDownListFor(model => model.Type, new SelectList(@ViewBag.Type), "--Select Type--", htmlAttributes: new { @class = "form-control" })
+                        @Html.EditorFor(model => model.Type, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
 
                     </div>
 
                     <div class="mb-3 col-10">
                         @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "control-label" })
-                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.Subject, new { @class = "form-control" } )
                         @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
 
                     </div>
@@ -94,7 +96,7 @@
                     </div>
 
                     <div class="col-10">
-                        <h4 class="text-primary">Upload File</h4>
+                        <h4 class="text-success">Upload File</h4>
                     </div>
                     
                     <div class="mb-3 col-5">
@@ -103,7 +105,7 @@
                         @Html.ValidationMessageFor(model => model.Pdfdirectory, "", new { @class = "text-danger" })
                     </div>
                     <div class="mb-3 col-10 pt-4">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <input type="submit" value="Create" class="btn btn-success" />
                         <input class="btn btn-secondary" type="button" title="Back To Index" value="Back To Index" onclick="location.href = '/FileInformation/Index'" />
                     </div>
                 </div>
@@ -113,8 +115,4 @@
     </form>
 }
 
-
-@*@section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }*@
 

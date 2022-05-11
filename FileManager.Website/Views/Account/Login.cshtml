@@ -6,39 +6,37 @@
 }
 
 
-<div class="row">
-    <div class="col-md-8">
+<div class="col-12">
         <section id="loginForm">
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-               
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    <div class="col-md-10">
+                    <div class="col-12">
                         <label>Username</label>
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter Username" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-10">
+                    <div class="col-12">
                         <label>Password</label>
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control",placeholder = "Enter Password" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger"})
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
                
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-success" />
+                    <div class="col-12 pt-5 row-cols-1 justify-content-center">
+                        <input type="submit" value="LOG - IN" class="btn btn-success rounded submit" style="height:56.5px;width:370px; font-size:larger" />
                     </div>
                 </div>
 
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>
+               
             }
         </section>
-    </div>
+    
 </div>
+

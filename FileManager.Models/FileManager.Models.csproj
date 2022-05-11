@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountViewModels.cs" />
+    <Compile Include="Dakk_Data.cs" />
     <Compile Include="FileInformation.cs" />
     <Compile Include="ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

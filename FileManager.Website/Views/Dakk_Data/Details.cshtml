@@ -1,0 +1,101 @@
+﻿@model FileManager.Models.Dakk_Data
+
+<div class="col-12 row">
+    <div class="col-6">
+        <div class="border p-3 row">
+            <div class="col-12 pb-2">
+                <h1 class="text-success">Dakk Details</h1>
+                <hr />
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.UploadTime)
+                <br />
+                @Html.DisplayFor(model => model.UploadTime)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.DateOnLetter)
+                <br />
+                @Html.DisplayFor(model => model.DateOnLetter)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Givennumber)
+                <br />
+                @Html.DisplayFor(model => model.Givennumber)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Sectionoforigin)
+                <br />
+                @Html.DisplayFor(model => model.Sectionoforigin)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Department)
+                <br />
+                @Html.DisplayFor(model => model.Department)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Addressee)
+                <br />
+                @Html.DisplayFor(model => model.Addressee)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Receivedby)
+                <br />
+                @Html.DisplayFor(model => model.Receivedby)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.DateReceived)
+                <br />
+                @Html.DisplayFor(model => model.DateReceived)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Number)
+                <br />
+                @Html.DisplayFor(model => model.Number)
+            </div>
+            <div class="mb-3 col-12">
+                @Html.LabelFor(model => model.Subject)
+                <br />
+                @Html.DisplayFor(model => model.Subject)
+            </div>
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Pages)
+                <br />
+                @Html.DisplayFor(model => model.Pages)
+            </div>
+
+            <div class="mb-3 col-3">
+                @Html.LabelFor(model => model.Status)
+                <br />
+                @Html.DisplayFor(model => model.Status)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.ForwardTo)
+                <br />
+                @Html.DisplayFor(model => model.ForwardTo)
+            </div>
+            <div class="col-3">
+                @Html.LabelFor(model => model.Pdfdirectory)
+                <br />
+                @Html.DisplayFor(model => model.Pdfdirectory)
+            </div>
+            <div class="col-10">
+                <label>Forward Section Details</label> 
+                <br />
+                @Html.DisplayFor(model => model.CurrentLocation)
+            </div>
+            <div class="col-10">
+                <label>Forward Time Details</label>
+                <br />
+                @Html.DisplayFor(model => model.ForwardTime)
+            </div>
+            <div class="mb-3 col-10 pt-4">
+                <input class="btn btn-success" type="button" title="Back To Index" value="Back To Index" onclick="location.href = '/Dakk_Data/Index'" />
+            </div>
+        </div>
+
+    </div>
+    <div class="col-6">
+        @*<iframe src="~/Downloads/Dakk/@Model.Pdfdirectory#toolbar=0" style="width:800px;height:900px"></iframe>*@
+        <iframe src="~/Downloads/Dakk/@Model.Pdfdirectory" style="width:800px;height:900px"></iframe>
+    </div>
+</div>

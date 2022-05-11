@@ -14,43 +14,47 @@
     <link rel="stylesheet" href="~/FrontEnd/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition login-page">
+    <div class="text-center">
+        <h3><strong>Planning &amp; Development</strong></h3>
+        <h4><strong>FILE - MANAGER</strong></h4>
+    </div>
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-success">
-            <div class="card-header text-center">
-                <h1><b>P &amp; D<br /></b></h1><h2>File - Manager</h2>
+        <div class="card card-outline card-success" style="height:485px">
+            <div class="text-center row justify-content-center pt-4">
+                <img src="~/Content/images/CRO LOGO.jpg" class="icon d-flex align-items-center justify-content-center" style="width:100px;height:100px;" />
+                <h3 style="color:#0a7639"><strong>GOVERNMENT OF SINDH</strong></h3>
             </div>
             <div class="card-body">
-              @RenderBody()
+                @RenderBody()
             </div>
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
     </div>
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/Content/FrontEnd/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Content/FrontEnd/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/FrontEnd/dist/js/adminlte.min.js"></script>
 
     <div class="container body-content">
+        @*@RenderBody()*@
+        <br />
         <hr />
-        <footer style="align-content:center">
+        <footer style="text-align:center">
             <strong>Copyright &copy; @DateTime.Now.Year <a class="text-success">Planning &amp; Developemnt Department</a>.</strong> Developed by Central Record Office Sindh - CRO (SGA &amp; CD)
         </footer>
     </div>
-
-    <!-- /.login-box -->
-    <!-- jQuery -->
-    <script src="~/FrontEnd/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/FrontEnd/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/FrontEnd/dist/js/adminlte.min.js"></script>
-  
- 
 
 </body>
 </html>
 
 <style>
       a:link, a:any-link {
-        color: green;
+        color: #28a745;
         background-color: transparent;
         text-decoration: none;
     }

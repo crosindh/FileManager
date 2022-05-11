@@ -58,17 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\IdentityModels.cs" />
-    <Compile Include="Migrations\202203141036277_InitialDB.cs" />
-    <Compile Include="Migrations\202203141036277_InitialDB.Designer.cs">
-      <DependentUpon>202203141036277_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\202205110620308_initial_DB.cs" />
+    <Compile Include="Migrations\202205110620308_initial_DB.Designer.cs">
+      <DependentUpon>202205110620308_initial_DB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203150315015_addeddatetime.cs" />
-    <Compile Include="Migrations\202203150315015_addeddatetime.Designer.cs">
-      <DependentUpon>202203150315015_addeddatetime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203150326335_addeddepartment.cs" />
-    <Compile Include="Migrations\202203150326335_addeddepartment.Designer.cs">
-      <DependentUpon>202203150326335_addeddepartment.cs</DependentUpon>
+    <Compile Include="Migrations\202205110625221_requiredchanged.cs" />
+    <Compile Include="Migrations\202205110625221_requiredchanged.Designer.cs">
+      <DependentUpon>202205110625221_requiredchanged.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,14 +80,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203141036277_InitialDB.resx">
-      <DependentUpon>202203141036277_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205110620308_initial_DB.resx">
+      <DependentUpon>202205110620308_initial_DB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203150315015_addeddatetime.resx">
-      <DependentUpon>202203150315015_addeddatetime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203150326335_addeddepartment.resx">
-      <DependentUpon>202203150326335_addeddepartment.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205110625221_requiredchanged.resx">
+      <DependentUpon>202205110625221_requiredchanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

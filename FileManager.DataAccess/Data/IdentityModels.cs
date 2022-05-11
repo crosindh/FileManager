@@ -25,6 +25,7 @@ namespace FileManager.DataAccess
         {
         }
         public DbSet<FileInformation> FileInformations{ get; set; }
+        public DbSet<Dakk_Data> Dakk_Data { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
